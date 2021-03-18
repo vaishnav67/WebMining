@@ -1,2 +1,2 @@
 # WebMining
-CSE3024 Lab
+Codes for CSE3024 Lab using Python 3
