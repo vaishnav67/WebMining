@@ -90,10 +90,15 @@ def golomb_dec(b, x):
 	return int(x)
 
 print ("Encoding")
-print ("    i: Elias Gamma: Elias Delta: Golomb(3)")
-for i in range(0,20,1):
-	print ("%5d: %-10s : %-10s : %-10s" %(i, elias_gamma(i),elias_delta(i), golomb(3,i)))
-print ("Decoding")
-print("    i: Elias Gamma: Elias Delta: Golomb(3)")
-for i in range(0,20,1):
-	print("%5d: %-10s : %-10s : %-10s" %(i,elias_gamma_dec(elias_gamma(i)),elias_delta_dec(elias_delta(i)),golomb_dec(3,(golomb(3,i)))))
+print ("    i: Elias Gamma: Elias Delta: Golomb(10)")
+for i in range(2,21,2):
+	print ("%5d: %-10s : %-10s : %-10s" %(i, elias_gamma(i),elias_delta(i), golomb(10,i)))
+print("Decoding: Elias Gamma")
+for i in range(2,21,2):
+	print("%-10s : %-10s"%(elias_gamma(i),elias_gamma_dec(elias_gamma(i))))
+print("Decoding: Elias Delta")
+for i in range(2,21,2):
+	print("%-10s : %-10s"%(elias_delta(i),elias_delta_dec(elias_delta(i))))
+print("Decoding: Golomb(10)")
+for i in range(2,21,2):
+	print("%-10s : %-10s"%(golomb(10,i),golomb_dec(10,golomb(10,i))))
